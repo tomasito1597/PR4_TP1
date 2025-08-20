@@ -73,7 +73,22 @@ public class Persona {
 		
 	}
 	
-	
-	
+		//Constructores
+		public Persona() {
+			fechaNacimiento = LocalDate.of(2025, 1, 1);
+			nombre = "Sin Nombre.";
+		}
+		
+		public Persona (LocalDate fechaNacimiento, String dni, String nombre, String apellido, String genero, String telefono, String direccion, String email) {
+			this.fechaNacimiento = fechaNacimiento;
+			this.dni = dni;
+			this.nombre = nombre;
+			this.apellido = apellido;
+			this.genero	= genero;
+			this.telefono = telefono;
+			this.direccion = direccion;
+			this.email = email;
+		}
+		
 	
 }
