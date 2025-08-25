@@ -15,6 +15,17 @@ public class Persona {
 	private String direccion;
 	private String email;
 	
+	 // Legajo único para cada persona
+    private final int legajo; 
+
+    // Variable estática para llevar el control del último legajo asignado
+    private static int ultimoLegajo = 1000;  
+
+    // MÉTODOS
+    private static int generarLegajo() {
+        return ultimoLegajo++;
+    }
+    
 	// getters y setters
 	
 	public LocalDate getFechaNacimiento() {
@@ -65,6 +76,9 @@ public class Persona {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	public int getLegajo() {
+        return legajo;
+    }
 	@Override
 	public String toString() {
 		return "Nombre: " + nombre + ", Apellido: " + apellido + ", Fecha Nacimiento: " + fechaNacimiento +
@@ -77,6 +91,7 @@ public class Persona {
 		public Persona() {
 			fechaNacimiento = LocalDate.of(2025, 1, 1);
 			nombre = "Sin Nombre.";
+			this.legajo = generarLegajo();
 		}
 		
 		public Persona (LocalDate fechaNacimiento, String dni, String nombre, String apellido, String genero, String telefono, String direccion, String email) {
@@ -88,6 +103,7 @@ public class Persona {
 			this.telefono = telefono;
 			this.direccion = direccion;
 			this.email = email;
+			this.legajo = generarLegajo(); // Asignación automática del legajo
 		}
 		
 	
