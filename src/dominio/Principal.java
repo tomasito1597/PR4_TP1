@@ -40,7 +40,9 @@ public class Principal {
         System.out.println(e3.toString());
         System.out.println(e4.toString());
         
-
+		System.out.print("El próximo legajo sera el " + Empleado.devuelveProximoLegajo());
+		
 	}
 
 }
+
